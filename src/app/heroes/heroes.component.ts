@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// importa da classe Hero
+// import da classe Hero
 import { Hero } from '../hero';
+// import do Mock de Hero
+import { HEROES } from '../mock-heroes';
 
 
 // metadados do component
@@ -11,15 +13,20 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+  // mock
+  heroes = HEROES;
+  // variavel para hero selecionado em heroes.component
+  selectedHero: Hero;
 
-  // inicializa objeto do tipo Hero
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
   constructor() { }
 
   ngOnInit() {
+  }
+
+  // Método chamado no button de heroes.component
+  // Seleciona hero que foi clicado na lista de heroes.component.html
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 
 }
