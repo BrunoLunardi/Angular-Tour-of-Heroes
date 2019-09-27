@@ -1,4 +1,4 @@
-<!-- Este componente é filho de app.component -->
+<!-- Este component é filho de app.component -->
 
 <h2>My Heroes</h2>
 <ul class="heroes">
@@ -12,19 +12,7 @@
   </li>
 </ul>
 
-<!-- Verifica se houve hero selecionado -->
-<div *ngIf="selectedHero">
-
-  <!-- Recebe o hero selecionado -->
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-
-  <!-- Altera automático os dados digitados do nome -->
-  <!-- Tem que adicionar o import FormsModule no app.module -->
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name" />
-    </label>
-  </div>
-
-</div>
+<!-- filho deste component -->
+<!-- utiliza o binding hero para passar os valores do hero 
+  selecionado para o component filho pp-hero-detail -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
