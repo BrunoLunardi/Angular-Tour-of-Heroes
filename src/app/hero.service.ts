@@ -10,7 +10,7 @@ import { MessageService } from "./message.service";
 })
 export class HeroService {
   //contrutor para injection de messageService
-  constructor(private messageService: MessageService) {}
+  private constructor(private messageService: MessageService) {}
 
   //retorna os heroes (do mock da model: src/app/hero.ts)
     // src/app/mock-heroes.ts
@@ -20,4 +20,11 @@ export class HeroService {
     this.messageService.add("HeroService: fetched heroes");
     return of(HEROES);
   } 
+
+  //para detalhes do heroe selecionado
+  getHero(id: number): Observable<Hero> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
 }

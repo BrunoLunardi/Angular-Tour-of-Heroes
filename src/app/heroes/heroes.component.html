@@ -7,12 +7,14 @@
   <!-- (click): Evento click está em heroes.component -->
   <!-- [class.selected]: classe css que será adicionada se a condição por atendida -->
     <!-- CSS heroes.component.css -->
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
 </ul>
 
 <!-- filho deste component -->
 <!-- utiliza o binding hero para passar os valores do hero 
   selecionado para o component filho pp-hero-detail -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

@@ -5,7 +5,18 @@
 
 <!-- Component filho -->
 <!-- Exibe lista de heróis -->
-<app-heroes></app-heroes>
+<!-- <app-heroes></app-heroes> -->
+
+<!-- Link com a rota definida em app/app-routing.module.ts -->
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+</nav>
+
+<!-- Acessar component via rota -->
+<!-- avisa o router onde exibir a view acessada pela rota -->
+<router-outlet></router-outlet>
+
 <!-- Component filho -->
 <!-- Exibe mensagens -->
 <app-messages></app-messages>
