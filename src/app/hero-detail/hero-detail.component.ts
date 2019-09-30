@@ -10,11 +10,11 @@ import { Hero } from '../hero';
 })
 export class HeroDetailComponent implements OnInit {
 
-  constructor() { }
-
   // Ligação para utilizar esta classe com o tipo Hero
   @Input()
   hero: Hero;
+
+  constructor() { }
 
   ngOnInit() {
   }
